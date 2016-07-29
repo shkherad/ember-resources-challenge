@@ -6,5 +6,9 @@ export default Ember.Route.extend({
       blogpost: null,
       comments: null
     };
-  }
+  },
+
+  model (params) {
+    this.get('store').findRecord('list', params.lists_id);
+  },
 });
